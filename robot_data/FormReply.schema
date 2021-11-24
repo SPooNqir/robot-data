@@ -1,0 +1,76 @@
+[
+ {
+  "name": "publishtime",
+  "type": "TIMESTAMP",
+  "mode": "REQUIRED",
+  "description": "///////////////////////////////////// add by robot-data service ///////////////////////\n @inject_tag: json:\"timestamp\""
+ },
+ {
+  "name": "identity",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "groups",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "paths",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "DataType",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "///////////////////////////////////// add SpoonExportableData ///////////////////////\n @inject_tag: json:\"DataType\""
+ },
+ {
+  "name": "ID",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"ID\""
+ },
+ {
+  "name": "RobotInfo",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"robotInfo\"",
+  "fields": [
+   {
+    "name": "RobotType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotType\""
+   },
+   {
+    "name": "RobotID",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotID\""
+   }
+  ]
+ },
+ {
+  "name": "FormId",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"formId\""
+ },
+ {
+  "name": "Question",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"question\""
+ },
+ {
+  "name": "Response",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"response\""
+ }
+]

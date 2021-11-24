@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+import "bq_table.proto";
+import "bq_field.proto";
+import "data.proto";
+
+message ActionWithInteractionResponse {
+  option (robot_data.bigquery_opts).table_name = "ActionWithInteractionResponse";
+
+  /////////////////////////////////////// add by robot-data service ///////////////////////
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (robot_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  string identity = 2 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  repeated string groups = 3;
+
+  // @inject_tag: json:"-"
+  repeated string paths = 4;
+
+  /////////////////////////////////////// add SpoonExportableData ///////////////////////
+  // @inject_tag: json:"DataType"
+  string DataType = 5 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"ID"
+  string ID = 6 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"robotInfo"
+  RobotInfo RobotInfo = 7;
+
+  // @inject_tag: json:"name"
+  string Name = 8;
+  // @inject_tag: json:"interactionStatus"
+  string InteractionStatus = 9;
+  // @inject_tag: json:"userResponse"
+  UserInteractionResponse UserResponse = 10;
+  // @inject_tag: json:"userInput"
+  UserInteractionInput UserInput = 11;
+  // @inject_tag: json:"totalDisplayedTime"
+  float TotalDisplayedTime = 12;
+}
+
+message UserInteractionResponse {
+ 
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+  // @inject_tag: json:"ID"
+  string ID = 2;
+
+
+  // @inject_tag: json:"response_type"
+  string Type = 3;
+  // @inject_tag: json:"concept"
+  LocalizableConcept Concept = 4;
+}
+
+message LocalizableConcept {
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+  // @inject_tag: json:"ID"
+  string ID = 2;
+  // @inject_tag: json:"name"
+  LocalizableString Name = 3;
+}
+
+message LocalizableString {
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+  // @inject_tag: json:"ID"
+  string ID = 2;
+  // @inject_tag: json:"content"
+  string Content = 3;
+}
+
+message UserInteractionInput {
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+  // @inject_tag: json:"ID"
+  string ID = 2;
+  // @inject_tag: json:"input_source"
+  string Input = 3;
+  // @inject_tag: json:"content"
+  LocalizableString Content = 4;
+  // @inject_tag: json:"speech"
+  Speech Speech = 5;
+  // @inject_tag: json:"matched"
+  bool Matched = 6;
+}

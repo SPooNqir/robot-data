@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+message RobotInfo {
+  // @inject_tag: json:"robotType"
+  string RobotType = 1;
+
+  // @inject_tag: json:"robotID"
+  string RobotID = 2;
+}
+
+
+message Speech {
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+  // @inject_tag: json:"ID"
+  string ID = 2;
+  // @inject_tag: json:"UserSpeech"
+  UserSpeech UserSpeech = 3;
+}
+
+message UserSpeech {
+  // @inject_tag: json:"semantics"
+  string Semantics = 1;
+  // @inject_tag: json:"confidence"
+  float Confidence = 2;
+  // @inject_tag: json:"state"
+  string State = 3;
+  // @inject_tag: json:"text"
+  string Text = 4;
+}

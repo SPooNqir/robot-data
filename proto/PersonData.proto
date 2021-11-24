@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+
+import "bq_table.proto";
+import "bq_field.proto";
+import "data.proto";
+
+message PersonData {
+  option (robot_data.bigquery_opts).table_name = "PersonData";
+
+  /////////////////////////////////////// add by robot-data service ///////////////////////
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (robot_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  string identity = 2 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  repeated string groups = 3;
+
+  // @inject_tag: json:"-"
+  repeated string paths = 4;
+
+  // @inject_tag: json:"DataType"
+  string DataType = 5 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"ID"
+  string ID = 6 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"firstTimeSeen"
+	string firstTimeSeen = 7;
+
+  // @inject_tag: json:"lastTimeSeen"
+	string lastTimeSeen = 8;
+
+  // @inject_tag: json:"age"
+	float Age = 9;
+
+  // @inject_tag: json:"gender"
+  string Gender = 10;
+  
+  // @inject_tag: json:"height"
+  float Height = 11;
+  
+  // @inject_tag: json:"heightConfidence"
+  float HeightConfidence = 12;
+
+  // @inject_tag: json:"engagementZone"
+  string EngagementZone = 13;
+
+  // @inject_tag: json:"faceData"
+  FaceData FaceData = 14;
+
+  // @inject_tag: json:"robotInfo"
+  RobotInfo RobotInfo = 15;
+
+  // @inject_tag: json:"totalSeenDuration"
+	float totalSeenDuration = 16;
+
+  // @inject_tag: json:"firstEngagementZone"
+  string firstEngagementZone = 17;
+
+  // @inject_tag: json:"closestEngagementZone"
+  string closestEngagementZone = 18;
+}
+
+message FaceData {
+  // @inject_tag: json:"DataType"
+  string DataType = 1;
+
+  // @inject_tag: json:"ID"
+  string ID = 2;
+
+  float Confidence = 3;
+
+  // @inject_tag: json:"sourceTimestamp"
+  string sourceTimestamp = 4;
+}

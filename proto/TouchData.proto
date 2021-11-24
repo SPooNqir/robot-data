@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+
+import "bq_table.proto";
+import "bq_field.proto";
+import "data.proto";
+
+message TouchData {
+  option (robot_data.bigquery_opts).table_name = "TouchData";
+
+  /////////////////////////////////////// add by robot-data service ///////////////////////
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (robot_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  string identity = 2 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  repeated string groups = 3;
+
+  // @inject_tag: json:"-"
+  repeated string paths = 4;
+
+  /////////////////////////////////////// add SpoonExportableData ///////////////////////
+  // @inject_tag: json:"DataType"
+  string DataType = 5 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"ID"
+  string ID = 6 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+
+  // @inject_tag: json:"robotInfo"
+  RobotInfo RobotInfo = 7;
+
+  // @inject_tag: json:"type"
+  string Type = 8;
+  // @inject_tag: json:"object"
+  string Object = 9;
+  // @inject_tag: json:"startTime"
+  string StartTime = 10;
+  // @inject_tag: json:"endTime"
+  string EndTime = 11;
+
+  // "Position":{
+  //   "x":398.0,
+  //   "y":921.0,
+  //   "normalized":{
+  //     "x":0.3966842,
+  //     "y":0.9179551,
+  //     "normalized":{
+  //       "x":0.396684229,
+  //       "y":0.91795516,
+  //       "magnitude":1.0,
+  //       "sqrMagnitude":1.0
+  //     },
+  //     "magnitude":0.99999994,
+  //     "sqrMagnitude":0.99999994
+  //   },
+  //   "magnitude":1003.317,
+  //   "sqrMagnitude":1006645.0
+  // }
+}

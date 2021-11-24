@@ -1,0 +1,149 @@
+[
+ {
+  "name": "publishtime",
+  "type": "TIMESTAMP",
+  "mode": "REQUIRED",
+  "description": "///////////////////////////////////// add by robot-data service ///////////////////////\n @inject_tag: json:\"timestamp\""
+ },
+ {
+  "name": "identity",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "groups",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "paths",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "DataType",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"DataType\""
+ },
+ {
+  "name": "ID",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"ID\""
+ },
+ {
+  "name": "firstTimeSeen",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"firstTimeSeen\""
+ },
+ {
+  "name": "lastTimeSeen",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"lastTimeSeen\""
+ },
+ {
+  "name": "Age",
+  "type": "FLOAT",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"age\""
+ },
+ {
+  "name": "Gender",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"gender\""
+ },
+ {
+  "name": "Height",
+  "type": "FLOAT",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"height\""
+ },
+ {
+  "name": "HeightConfidence",
+  "type": "FLOAT",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"heightConfidence\""
+ },
+ {
+  "name": "EngagementZone",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"engagementZone\""
+ },
+ {
+  "name": "FaceData",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"faceData\"",
+  "fields": [
+   {
+    "name": "DataType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"DataType\""
+   },
+   {
+    "name": "ID",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"ID\""
+   },
+   {
+    "name": "Confidence",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+   },
+   {
+    "name": "sourceTimestamp",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"sourceTimestamp\""
+   }
+  ]
+ },
+ {
+  "name": "RobotInfo",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"robotInfo\"",
+  "fields": [
+   {
+    "name": "RobotType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotType\""
+   },
+   {
+    "name": "RobotID",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotID\""
+   }
+  ]
+ },
+ {
+  "name": "totalSeenDuration",
+  "type": "FLOAT",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"totalSeenDuration\""
+ },
+ {
+  "name": "firstEngagementZone",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"firstEngagementZone\""
+ },
+ {
+  "name": "closestEngagementZone",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"closestEngagementZone\""
+ }
+]

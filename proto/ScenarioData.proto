@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+
+import "bq_table.proto";
+import "bq_field.proto";
+import "data.proto";
+
+message ScenarioData {
+  option (robot_data.bigquery_opts).table_name = "ScenarioData";
+
+  /////////////////////////////////////// add by robot-data service ///////////////////////
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (robot_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  string identity = 2 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  repeated string groups = 3;
+
+  // @inject_tag: json:"-"
+  repeated string paths = 4;
+
+  /////////////////////////////////////// add SpoonExportableData ///////////////////////
+  // @inject_tag: json:"DataType"
+  string DataType = 5 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"ID"
+  string ID = 6 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"robotInfo"
+  RobotInfo RobotInfo = 7;
+
+
+  // @inject_tag: json:"currentState"
+  InteractionScenarioState CurrentState = 8;
+
+  // @inject_tag: json:"name"
+  string Name = 9;
+
+  // @inject_tag: json:"isRootScenario"
+  bool IsRootScenario = 10;
+
+  // @inject_tag: json:"startTime"
+  string StartTime = 11;
+
+  // @inject_tag: json:"endTime"
+  string EndTime = 12;
+
+  // @inject_tag: json:"totalDuration"
+  float TotalDuration = 13;
+
+  message NInteractionState {
+    // @inject_tag: json:"m_Type"
+    string Type = 1;
+    // @inject_tag: json:"m_Mode"
+    string Mode = 2;
+
+
+    // @inject_tag: json:"DataType"
+    string DataType = 3;
+
+    // @inject_tag: json:"ID"
+    string ID = 4;
+  }
+
+
+  // @inject_tag: json:"interactionState"
+  NInteractionState InteractionState = 14;
+
+  // @inject_tag: json:"scenarioResult"
+  InteractionScenarioResult ScenarioResult = 15;
+
+  // @inject_tag: json:"inheritedTags"
+  repeated string InheritedTags = 16;
+
+  // @inject_tag: json:"currentTags"
+  repeated string CurrentTags = 17;
+
+  // @inject_tag: json:"keyTag"
+  string KeyTag = 18;
+}
+
+
+message InteractionScenarioState {
+  // @inject_tag: json:"m_Name"
+  string Name = 1;
+}
+
+message InteractionScenarioResult {
+  // @inject_tag: json:"m_Status"
+  string Status = 1;
+  // @inject_tag: json:"m_AfterEndType"
+  string AfterEndType = 2;
+  // @inject_tag: json:"m_Message"
+  string Message = 3;
+}

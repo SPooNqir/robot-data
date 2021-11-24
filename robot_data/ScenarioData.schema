@@ -1,0 +1,178 @@
+[
+ {
+  "name": "publishtime",
+  "type": "TIMESTAMP",
+  "mode": "REQUIRED",
+  "description": "///////////////////////////////////// add by robot-data service ///////////////////////\n @inject_tag: json:\"timestamp\""
+ },
+ {
+  "name": "identity",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "groups",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "paths",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"-\""
+ },
+ {
+  "name": "DataType",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "///////////////////////////////////// add SpoonExportableData ///////////////////////\n @inject_tag: json:\"DataType\""
+ },
+ {
+  "name": "ID",
+  "type": "STRING",
+  "mode": "REQUIRED",
+  "description": "@inject_tag: json:\"ID\""
+ },
+ {
+  "name": "RobotInfo",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"robotInfo\"",
+  "fields": [
+   {
+    "name": "RobotType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotType\""
+   },
+   {
+    "name": "RobotID",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"robotID\""
+   }
+  ]
+ },
+ {
+  "name": "CurrentState",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"currentState\"",
+  "fields": [
+   {
+    "name": "Name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_Name\""
+   }
+  ]
+ },
+ {
+  "name": "Name",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"name\""
+ },
+ {
+  "name": "IsRootScenario",
+  "type": "BOOLEAN",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"isRootScenario\""
+ },
+ {
+  "name": "StartTime",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"startTime\""
+ },
+ {
+  "name": "EndTime",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"endTime\""
+ },
+ {
+  "name": "TotalDuration",
+  "type": "FLOAT",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"totalDuration\""
+ },
+ {
+  "name": "InteractionState",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"interactionState\"",
+  "fields": [
+   {
+    "name": "Type",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_Type\""
+   },
+   {
+    "name": "Mode",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_Mode\""
+   },
+   {
+    "name": "DataType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"DataType\""
+   },
+   {
+    "name": "ID",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"ID\""
+   }
+  ]
+ },
+ {
+  "name": "ScenarioResult",
+  "type": "RECORD",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"scenarioResult\"",
+  "fields": [
+   {
+    "name": "Status",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_Status\""
+   },
+   {
+    "name": "AfterEndType",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_AfterEndType\""
+   },
+   {
+    "name": "Message",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "@inject_tag: json:\"m_Message\""
+   }
+  ]
+ },
+ {
+  "name": "InheritedTags",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"inheritedTags\""
+ },
+ {
+  "name": "CurrentTags",
+  "type": "STRING",
+  "mode": "REPEATED",
+  "description": "@inject_tag: json:\"currentTags\""
+ },
+ {
+  "name": "KeyTag",
+  "type": "STRING",
+  "mode": "NULLABLE",
+  "description": "@inject_tag: json:\"keyTag\""
+ }
+]

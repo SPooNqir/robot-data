@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+
+package robot_data;
+
+option go_package = "github.com/slavayssiere-spoon/robot-data";
+
+
+import "bq_table.proto";
+import "bq_field.proto";
+import "data.proto";
+
+message SoundData {
+  option (robot_data.bigquery_opts).table_name = "SoundData";
+
+  /////////////////////////////////////// add by robot-data service ///////////////////////
+  // @inject_tag: json:"timestamp"
+	string publishtime = 1 [
+    (robot_data.bigquery) = {
+      require: true
+      type_override: 'TIMESTAMP'
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  string identity = 2 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"-"
+  repeated string groups = 3;
+
+  // @inject_tag: json:"-"
+  repeated string paths = 4;
+
+  /////////////////////////////////////// add SpoonExportableData ///////////////////////
+  // @inject_tag: json:"DataType"
+  string DataType = 5 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"ID"
+  string ID = 6 [
+    (robot_data.bigquery) = {
+      require: true
+    }
+  ];
+
+  // @inject_tag: json:"robotInfo"
+  RobotInfo RobotInfo = 7;
+
+  // @inject_tag: json:"firstTimeHeard"
+  string FirstTimeHeard = 8;
+  // @inject_tag: json:"lastTimeHeard"
+  string LastTimeHeard = 9;
+  // @inject_tag: json:"speech"
+  Speech Speech = 10;
+}
