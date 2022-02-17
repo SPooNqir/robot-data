@@ -9,8 +9,8 @@ option go_package = "github.com/slavayssiere-spoon/robot-data";
 import "bq_table.proto";
 import "bq_field.proto";
 
-message GenericData {
-  option (robot_data.bigquery_opts).table_name = "GenericData";
+message GenericStringData {
+  option (robot_data.bigquery_opts).table_name = "GenericStringData";
 
   /////////////////////////////////////// add by robot-data service ///////////////////////
   // @inject_tag: json:"timestamp"
