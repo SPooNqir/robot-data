@@ -118,6 +118,13 @@ protoc \
   --bq-schema_out=. \
   proto/RobotSpeech.proto
 
+protoc \
+  -I proto \
+  -I $GOPATH/src/include \
+  --go_out=$GEN_PATH      --go_opt=paths=source_relative \
+  --bq-schema_out=. \
+  proto/GenericData.proto
+
 protoc-go-inject-tag -input=./data.pb.go
 protoc-go-inject-tag -input=./ActionWithInteractionResponse.pb.go
 protoc-go-inject-tag -input=./FormReply.pb.go
@@ -127,6 +134,7 @@ protoc-go-inject-tag -input=./SoundData.pb.go
 protoc-go-inject-tag -input=./TouchData.pb.go
 protoc-go-inject-tag -input=./InteractionState.pb.go
 protoc-go-inject-tag -input=./RobotSpeech.pb.go
+protoc-go-inject-tag -input=./GenericData.pb.go
 
 echo "mod tidy"
 go mod tidy
