@@ -42,5 +42,6 @@ message GenericStringData {
     }
   ];
 
-  string data = 6;
+  string key = 6;
+  string value = 7;
 }

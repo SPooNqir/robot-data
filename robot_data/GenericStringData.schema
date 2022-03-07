@@ -30,7 +30,12 @@
   "description": "///////////////////////////////////// add SpoonExportableData ///////////////////////\n @inject_tag: json:\"DataType\""
  },
  {
-  "name": "data",
+  "name": "key",
+  "type": "STRING",
+  "mode": "NULLABLE"
+ },
+ {
+  "name": "value",
   "type": "STRING",
   "mode": "NULLABLE"
  }
