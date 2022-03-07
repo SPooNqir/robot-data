@@ -31,19 +31,7 @@
  },
  {
   "name": "data",
-  "type": "RECORD",
-  "mode": "REPEATED",
-  "fields": [
-   {
-    "name": "key",
-    "type": "STRING",
-    "mode": "NULLABLE"
-   },
-   {
-    "name": "value",
-    "type": "STRING",
-    "mode": "NULLABLE"
-   }
-  ]
+  "type": "STRING",
+  "mode": "NULLABLE"
  }
 ]
