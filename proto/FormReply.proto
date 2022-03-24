@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package robot_data;
 
-option go_package = "github.com/slavayssiere-spoon/robot-data";
+option go_package = "github.com/SPooNqir/robot-data";
 
 import "bq_table.proto";
 import "bq_field.proto";

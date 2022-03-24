@@ -16,7 +16,7 @@ syntax = "proto3";
 
 package robot_data;
 
-option go_package = "github.com/slavayssiere-spoon/robot-data";
+option go_package = "github.com/SPooNqir/robot-data";
 
 
 import "google/protobuf/descriptor.proto";

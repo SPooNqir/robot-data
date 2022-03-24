@@ -10,22 +10,22 @@ ROBOT_HEALTH_VERSION="master"
 EVENTS_DATA_VERSION="master"
 
 AUTHORIZATIONS_VERSION="master"
-curl -o proto/authorizations.proto "https://raw.githubusercontent.com/slavayssiere-spoon/authorizations/$AUTHORIZATIONS_VERSION/proto/authorizations.proto"
+curl -o proto/authorizations.proto "https://raw.githubusercontent.com/SPooNqir/authorizations/$AUTHORIZATIONS_VERSION/proto/authorizations.proto"
 
 GROUPS_VERSION="master"
-curl -o proto/groups.proto "https://raw.githubusercontent.com/slavayssiere-spoon/groups/$GROUPS_VERSION/proto/groups.proto"
+curl -o proto/groups.proto "https://raw.githubusercontent.com/SPooNqir/groups/$GROUPS_VERSION/proto/groups.proto"
 
 USERS_VERSION="master"
-curl -o proto/users.proto "https://raw.githubusercontent.com/slavayssiere-spoon/users/$USERS_VERSION/proto/users.proto"
+curl -o proto/users.proto "https://raw.githubusercontent.com/SPooNqir/users/$USERS_VERSION/proto/users.proto"
 
 ROBOTS_VERSION="master"
-curl -o proto/robots.proto "https://raw.githubusercontent.com/slavayssiere-spoon/robots/$ROBOTS_VERSION/proto/robots.proto"
+curl -o proto/robots.proto "https://raw.githubusercontent.com/SPooNqir/robots/$ROBOTS_VERSION/proto/robots.proto"
 
 HEALTH_VERSION="master"
-curl -o proto/health.proto "https://raw.githubusercontent.com/slavayssiere-spoon/health/$HEALTH_VERSION/proto/health.proto"
+curl -o proto/health.proto "https://raw.githubusercontent.com/SPooNqir/health/$HEALTH_VERSION/proto/health.proto"
 
 EVENT_VERSION="master"
-curl -o proto/IdentityEvent.proto "https://raw.githubusercontent.com/slavayssiere-spoon/event-data/$HEALTH_VERSION/proto/IdentityEvent.proto"
+curl -o proto/IdentityEvent.proto "https://raw.githubusercontent.com/SPooNqir/event-data/$HEALTH_VERSION/proto/IdentityEvent.proto"
 
 mkdir -p proto/google/api 
 curl -o proto/google/api/annotations.proto "https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/annotations.proto"
